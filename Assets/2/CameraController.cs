@@ -15,5 +15,20 @@ public class CameraController : MonoBehaviour
     {
         Vector3 handPos = this.hand.transform.position;
         transform.position = new Vector3(handPos.x + 0.5f, handPos.y + 0.5f, transform.position.z);
+        EndGame();
+    }
+    public void EndGame()
+    {
+        //エスケープキーを押したらゲームを終了する
+        if (Input.GetKey(KeyCode.Escape))
+        {
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
+#else
+            Application.Quit();
+#endif
+        }
+
     }
 }
