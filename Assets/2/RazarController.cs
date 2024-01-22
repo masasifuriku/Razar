@@ -9,7 +9,7 @@ public class RazarController : MonoBehaviour
     void Start()
     {
         this.hand = GameObject.Find("Hand");
-        transform.position = new Vector3(-2.9f,1.5f, -1.1f);
+        transform.position = new Vector3(-25.6f, 6.68f, -1.1f);
     }
     void Update()
     {
@@ -18,7 +18,7 @@ public class RazarController : MonoBehaviour
     }
     void OnTriggerStay(Collider collision)
     {
-        // もし衝突した相手オブジェクトの名前が"Cube"ならば
+        // もし衝突した相手オブジェクトのタグが"Stage"ならば
         if (collision.gameObject.tag == "Stage")
         {
             // 衝突した相手オブジェクトを削除する

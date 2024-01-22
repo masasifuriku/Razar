@@ -9,7 +9,7 @@ public class CameraController : MonoBehaviour
     void Start()
     {
         this.hand = GameObject.Find("Hand");
-        transform.position = new Vector3(-2.0f,2.0f,-6.5f);
+        transform.position = new Vector3(-25.3f,7.0f,-6.5f);
     }
     void Update()
     {
