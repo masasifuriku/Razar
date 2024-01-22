@@ -16,4 +16,13 @@ public class RazarController : MonoBehaviour
         Vector3 handPos = this.hand.transform.position;
         transform.position = new Vector3(handPos.x + 0.2f, handPos.y + 0.2f, transform.position.z);
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        // もし衝突した相手オブジェクトの名前が"Cube"ならば
+        if (collision.gameObject.name == "Stage")
+        {
+            // 衝突した相手オブジェクトを削除する
+            Destroy(collision.gameObject);
+        }
+    }
 }
