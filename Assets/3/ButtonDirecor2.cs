@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class ButtonDirector : MonoBehaviour
+public class ButtonDirecor2 : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,6 @@ public class ButtonDirector : MonoBehaviour
     }
     public void OnClick()
     {
-        SceneManager.LoadScene("TitleScene");
+        SceneManager.LoadScene("PlayScene");
     }
 }
