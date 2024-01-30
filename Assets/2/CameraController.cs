@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    GameObject razar;
+    GameObject hand;
     void Start()
     {
-        this.razar = GameObject.Find("Razar");
+        this.hand = GameObject.Find("Hand");
         transform.position = new Vector3(-25.3f,7.0f,-6.5f);
     }
     void Update()
     {
-        Vector3 handPos = this.razar.transform.position;
+        Vector3 handPos = this.hand.transform.position;
         transform.position = new Vector3(handPos.x + 0.5f, handPos.y + 0.5f, transform.position.z);
         EndGame();
     }

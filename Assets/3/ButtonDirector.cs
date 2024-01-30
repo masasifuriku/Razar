@@ -14,10 +14,9 @@ public class ButtonDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    public void OnClick()
-    {
-        SceneManager.LoadScene("TitleScene");
+        if(Input.GetMouseButtonDown(0))
+        {
+            SceneManager.LoadScene("TitleScene");
+        }
     }
 }

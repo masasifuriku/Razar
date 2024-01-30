@@ -12,12 +12,13 @@ public class ButtonDirecor2 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void OnClick()
+     void Update()
     {
         SceneManager.LoadScene("PlayScene");
     }
+    public void OnClick()
+    {
+        Debug.Log("OnClick");
+    }
+
 }
