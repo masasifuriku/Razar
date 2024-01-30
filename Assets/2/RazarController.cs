@@ -6,15 +6,33 @@ using UnityEngine;
 public class RazarController : MonoBehaviour
 {
     GameObject hand;
+    Vector3 startPos;
     void Start()
     {
+        Application.targetFrameRate = 60;
         this.hand = GameObject.Find("Hand");
         transform.position = new Vector3(-25.6f, 6.68f, -1.1f);
+        startPos = transform.position;
+        
     }
     void Update()
     {
-        Vector3 handPos = this.hand.transform.position;
-        transform.position = new Vector3(handPos.x + 0.2f, handPos.y + 0.2f, transform.position.z);
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            this.transform.Translate(-0.04f, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            this.transform.Translate(0.04f, 0, 0);
+        }
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            this.transform.Translate(0, 0.04f, 0);
+        }
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            this.transform.Translate(0, -0.04f, 0);
+        }
     }
     void OnTriggerStay(Collider collision)
     {
@@ -22,7 +40,7 @@ public class RazarController : MonoBehaviour
         if (collision.gameObject.tag == "Stage")
         {
             // 衝突した相手オブジェクトを削除する
-            Destroy(collision.gameObject);
+            transform.position = startPos;
         }
     }
 }
