@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RazarController : MonoBehaviour
 {
@@ -39,8 +40,13 @@ public class RazarController : MonoBehaviour
         // もし衝突した相手オブジェクトのタグが"Stage"ならば
         if (collision.gameObject.tag == "Stage")
         {
-            // 衝突した相手オブジェクトを削除する
+            //スタート位置に戻る
             transform.position = startPos;
+        }
+        // もし衝突した相手オブジェクトのタグが"Goal"ならば
+        if (collision.gameObject.tag == "Goal")
+        {
+            SceneManager.LoadScene("ResultScene");
         }
     }
 }

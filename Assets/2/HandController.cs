@@ -4,32 +4,15 @@ using UnityEngine;
 
 public class HandController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public GameObject m_Camera;
+    GameObject razar;
     void Start()
     {
-        Application.targetFrameRate = 60;
-        m_Camera = GameObject.Find("MainCamera");
+        this.razar = GameObject.Find("Razar");
+        transform.position = new Vector3(-25.60f, 6.708f, -5.87f);
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.LeftArrow))
-        {
-            this.transform.Translate(0,0.04f,0);
-        }
-        if(Input.GetKey(KeyCode.RightArrow))
-        {
-           this.transform.Translate(0, -0.04f, 0);
-        }
-        if(Input.GetKey(KeyCode.UpArrow))
-        {
-            this.transform.Translate(-0.04f, 0, 0);
-        }
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            this.transform.Translate(0.04f, 0, 0);
-        }
+        Vector3 handPos = this.razar.transform.position;
+        transform.position = new Vector3(handPos.x + (0.1f), handPos.y + (0.07f), transform.position.z);
     }
 }
