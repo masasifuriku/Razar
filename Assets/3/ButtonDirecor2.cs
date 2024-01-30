@@ -14,10 +14,24 @@ public class ButtonDirecor2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SceneManager.LoadScene("PlayScene");
+        }
+        EndGame();
     }
-    public void OnClick()
+    public void EndGame()
     {
-        SceneManager.LoadScene("PlayScene");
+        //エスケープキーを押したらゲームを終了する
+        if (Input.GetKey(KeyCode.Escape))
+        {
+
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;//ゲームプレイ終了
+#else
+            Application.Quit();
+#endif
+        }
+
     }
 }
